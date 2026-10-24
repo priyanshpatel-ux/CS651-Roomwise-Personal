@@ -1,0 +1,26 @@
+runtime: nodejs22
+service: roomwise-g21
+
+handlers:
+  - url: /assets
+    static_dir: dist/assets
+    secure: always
+  - url: /images
+    static_dir: dist/images
+    secure: always
+  - url: /styles.css
+    static_files: dist/styles.css
+    upload: dist/styles.css
+    secure: always
+  - url: /favicon.svg
+    static_files: dist/favicon.svg
+    upload: dist/favicon.svg
+    secure: always
+  - url: /(.*\.html)
+    static_files: dist/\1
+    upload: dist/.*\.html
+    secure: always
+  - url: /
+    static_files: dist/index.html
+    upload: dist/index.html
+    secure: always
